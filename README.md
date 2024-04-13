@@ -1,30 +1,51 @@
-# React + TypeScript + Vite
+# Cadastro de músicos
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![imagem do projeto](/public/print1.png)
 
-Currently, two official plugins are available:
+## Tecnologias utilizadas:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [ReactJS](https://react.dev/)
+- [ViteJS](https://vitejs.dev/) - com Typescript
+- [TailwindCSS](https://tailwindcss.com/)
+- [Node.JS](https://nodejs.org/en)
+- [Fastify](https://fastify.dev/)
+- [MongoDB](https://www.mongodb.com/pt-br)
+- [Prisma](https://www.prisma.io/)
 
-## Expanding the ESLint configuration
+![imagem Vite.js](/public/vite.svg)
+![imagem Typescript](/public/Typescript.png)
+![imagem TailwindCSS](/public/icon-tailwind.png)
+![imagem Nodejs](/public/node.png)
+![imagem Fastify](/public/Fastify_logo.svg)
+![imagem MongoDb](/public/MongoDB_Logo.svg.png)
+![imagem Prisma](/public/prisma.png)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
+- Exemplo da configuração do `server.ts`, na API:
 
 ```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+import Fastify from "fastify";
+import cors from "@fastify/cors";
+import { routes } from "./routes";
+
+const app = Fastify({ logger: true });
+
+app.setErrorHandler((error, request, reply) => {
+  reply.code(400).send({ message: error.message });
+});
+
+const start = async () => {
+  await app.register(cors);
+  await app.register(routes);
+
+  try {
+    await app.listen({ port: 3333 });
+  } catch (err) {
+    process.exit(1);
+  }
+};
+
+start();
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- Desenvolvido por: `Rafael Silva`
+- Contato: `rafaolly1@gmail.com`
