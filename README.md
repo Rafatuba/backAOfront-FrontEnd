@@ -12,10 +12,13 @@
 - [MongoDB](https://www.mongodb.com/pt-br)
 - [Prisma](https://www.prisma.io/)
 
-![imagem Vite.js](/public/vite.svg) ![imagem Typescript](/public/Typescript.png)
-![imagem TailwindCSS](/public/icon-tailwind.png) ![imagem Nodejs](/public/node.png)
-![imagem Fastify](/public/Fastify_logo.svg) ![imagem MongoDb](/public/MongoDB_Logo.svg.png)
-![imagem Prisma](/public/prisma.png)
+<img src="/public/vite.svg" alt="vite.js" style={width:200px}>
+<img src="/public/Typescript.png" alt="Typscript" style={width:200px}>
+<img src="/public/icon-tailwind.png" alt="Tailwind css" style={width:200px}>
+<img src="/public/node.png" alt="Node" style={width:200px}>
+<img src="/public/Fastify_logo.svg" alt="Fastify" style={width:200px}>
+<img src="/public/MongoDB_Logo.svg.png" alt="MongoDB" style={width:200px}>
+<img src="/public/prisma.png" alt="Prisma" style={width:200px}>
 
 - Exemplo da configuração do `server.ts`, na API:
 
